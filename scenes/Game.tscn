@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/Slingshot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Vegetables.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/фон (2).png" type="Texture" id=3]
+[ext_resource path="res://scenes/CameraController.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Wood.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/FastFood.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 88.4202
+
+[node name="Game" type="Node2D"]
+position = Vector2( 11, 30 )
+
+[node name="Фон(2)" type="Sprite" parent="."]
+position = Vector2( 506, 301 )
+scale = Vector2( 0.133512, 0.133512 )
+texture = ExtResource( 3 )
+
+[node name="Фон(2)3" type="Sprite" parent="."]
+position = Vector2( -571, 298 )
+scale = Vector2( 0.133512, 0.133512 )
+texture = ExtResource( 3 )
+
+[node name="Фон(2)2" type="Sprite" parent="."]
+position = Vector2( 1581, 298 )
+scale = Vector2( 0.133512, 0.133512 )
+texture = ExtResource( 3 )
+
+[node name="Slingshot" parent="." instance=ExtResource( 1 )]
+position = Vector2( 286, 433 )
+
+[node name="Vegetable" parent="." instance=ExtResource( 2 )]
+position = Vector2( 260, 482 )
+
+[node name="Vegetable2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 211, 492 )
+
+[node name="Vegetable3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 172, 511 )
+
+[node name="Vegetable4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 129, 513 )
+
+[node name="Vegetable5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 129, 513 )
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
+position = Vector2( 504, 302 )
+current = true
+limit_top = 0
+limit_bottom = 630
+script = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="Camera2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 765, 594 )
+scale = Vector2( 1.12, 1.18447 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 765, 594 )
+scale = Vector2( 1.12, 1.18447 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1335, 578 )
+scale = Vector2( 1.61037, 1.04968 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1176, 620 )
+scale = Vector2( 1.12, 1.30447 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 856, 625 )
+scale = Vector2( 1.12, 1.30447 )
+shape = SubResource( 1 )
+
+[node name="Wood" parent="." instance=ExtResource( 5 )]
+position = Vector2( 760, 453 )
+
+[node name="Wood6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 885, 497 )
+rotation = -0.275235
+
+[node name="CollisionShape2D" parent="Wood6" index="0"]
+scale = Vector2( 1, 0.56 )
+
+[node name="Sprite" parent="Wood6" index="1"]
+scale = Vector2( 0.1, 0.056 )
+
+[node name="Wood7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 945, 475 )
+rotation = -0.366266
+
+[node name="CollisionShape2D" parent="Wood7" index="0"]
+scale = Vector2( 1, 0.56 )
+
+[node name="Sprite" parent="Wood7" index="1"]
+scale = Vector2( 0.1, 0.056 )
+
+[node name="Wood4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 820, 463 )
+rotation = 0.443981
+
+[node name="Wood5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 849, 479 )
+rotation = 2.8797
+
+[node name="Wood2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 870, 478 )
+rotation = -0.0228444
+
+[node name="Wood3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 829, 423 )
+rotation = -1.29622
+
+[node name="CollisionShape2D" parent="Wood3" index="0"]
+position = Vector2( 2.00104, -1.91 )
+scale = Vector2( 1, 2.025 )
+
+[node name="Sprite" parent="Wood3" index="1"]
+scale = Vector2( 0.1, 0.203 )
+
+[node name="FastFood" parent="." instance=ExtResource( 6 )]
+position = Vector2( 787, 471 )
+
+[editable path="Wood"]
+[editable path="Wood6"]
+[editable path="Wood7"]
+[editable path="Wood3"]
